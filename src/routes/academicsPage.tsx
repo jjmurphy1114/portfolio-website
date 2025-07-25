@@ -11,7 +11,7 @@ const AcademicsPage = () => {
         location="Worcester, MA"
         date="Graduation: May 2026"
         description=""
-        imageUrl="public/wpiLogo.png"
+        imageUrl="/wpiLogo.png"
         link="https://www.universityofexample.edu/"
       />
       <h1 className="text-4xl font-bold m-4 mt-12">Relevant Courses</h1>

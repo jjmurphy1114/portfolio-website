@@ -10,7 +10,7 @@ const ExperiencePage = () => {
         location="Remote"
         date="June 2025 - August 2025"
         description="Developed a React web client using TypeScript to create customer service call simulations"
-        imageUrl="public/symtrainLogo.jpeg"
+        imageUrl="/symtrainLogo.jpeg"
         link="https://symtrain.ai/"
       />
       <ExperienceCard
@@ -19,7 +19,7 @@ const ExperiencePage = () => {
         location="Remote"
         date="June 2023 - August 2023"
         description="Developed a full-stack web application using Node.js, TypeScript, and PostgreSQL"
-        imageUrl="public/calldLogo.png"
+        imageUrl="/calldLogo.png"
         link="http://getcalld.com/"
       />
     </div>
