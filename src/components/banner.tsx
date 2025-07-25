@@ -109,7 +109,7 @@ const Banner = () => {
     <>
       <nav className="flex fixed top-0 left-0 w-full h-20 border-b-4 items-center justify-between border-darkGray bg-primary shadow-md p-4 z-50">
         <img
-          src="src/assets/JMlogo.png"
+          src="public/JMlogo.png"
           alt="JMLogo"
           className="h-12 w-12 mr-4 left-0 flex items-center rounded-lg"
         />

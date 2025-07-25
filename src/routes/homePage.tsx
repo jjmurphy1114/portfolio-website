@@ -8,7 +8,7 @@ function HomePage() {
     <div className="flex w-full h-full min-h-screen flex-col bg-lightGray">
       <div className="flex items-center justify-center flex-col pt-8 mb-4 md:mb-10">
         <h1 className="text-6xl mb-8 font-bold text-black">Jacob Murphy</h1>
-        <img src="src/assets/headshot.png" alt="" />
+        <img src="public/headshot.png" alt="" />
         <h1 className="text-2xl mt-8 font-bold text-black">
           Software Engineer
         </h1>
