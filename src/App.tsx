@@ -3,7 +3,7 @@ import HomePage from "./routes/homePage";
 import ProjectsPage from "./routes/projectsPage";
 import ExperiencePage from "./routes/experiencePage";
 import AcademicsPage from "./routes/academicsPage";
-import Banner from "./components/banner";
+import Banner from "./components/banner/banner";
 import Footer from "./components/footer";
 
 function Root() {

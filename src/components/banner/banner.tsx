@@ -1,13 +1,14 @@
-import { useNavigate } from "react-router-dom";
-import { useEffect, useState } from "react";
-import Snackbar from "./snackbar";
+import React, { useEffect, useState } from "react";
+import Snackbar from "../snackbar";
 import emailjs from "@emailjs/browser";
+import DesktopNavButton from "./desktopNavButton";
+import MobileNavButton from "./mobileNavButton";
 
 const Banner = () => {
-  const navigate = useNavigate();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [message, setMessage] = useState("");
   const [successfully, setSuccessfully] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const toggleModal = () => {
     setIsModalOpen(!isModalOpen);
@@ -97,6 +98,7 @@ const Banner = () => {
     );
   };
 
+  // Timer for Snackbar
   useEffect(() => {
     const timer = setTimeout(() => {
       setMessage("");
@@ -113,34 +115,78 @@ const Banner = () => {
           alt="JMLogo"
           className="h-12 w-12 mr-4 left-0 flex items-center rounded-lg"
         />
-        <div className="flex items-center justify-center space-x-4 absolute left-1/2 transform -translate-x-1/2">
+        {/* Mobile Menu */}
+        <div className="md:hidden flex items-end justify-end w-full">
           <button
-            className="text-black font-bold text-lg ml-4"
-            onClick={() => navigate("")}
+            className="text-gray-300 hover:text-white focus:outline-none"
+            onClick={() => setMobileMenuOpen((prev) => !prev)}
           >
-            Home
-          </button>
-          <button
-            className="text-black font-bold text-lg ml-4"
-            onClick={() => navigate("projects")}
-          >
-            Projects
-          </button>
-          <button
-            className="text-black font-bold text-lg ml-4"
-            onClick={() => navigate("experience")}
-          >
-            Experience
-          </button>
-          <button
-            className="text-black font-bold text-lg ml-4"
-            onClick={() => navigate("academics")}
-          >
-            Academics
+            <svg
+              className="h-6 w-6"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="black"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d={
+                  mobileMenuOpen
+                    ? "M6 18L18 6M6 6l12 12"
+                    : "M4 6h16M4 12h16M4 18h16"
+                }
+              />
+            </svg>
           </button>
         </div>
+
+        {/* Desktop Navigation */}
+        <div className="hidden md:flex items-center justify-center space-x-4 absolute left-1/2 transform -translate-x-1/2">
+          <DesktopNavButton text="Home" link="" />
+          <DesktopNavButton text="Projects" link="/projects" />
+          <DesktopNavButton text="Experience" link="/experience" />
+          <DesktopNavButton text="Academics" link="/academics" />
+        </div>
+
+        {/* Mobile Navigation */}
+        {mobileMenuOpen && (
+          <div>
+            <div className="absolute top-20 left-0 w-full bg-primary shadow-lg p-4">
+              <MobileNavButton
+                text="Home"
+                link=""
+                setMobileMenuOpen={setMobileMenuOpen}
+              />
+              <MobileNavButton
+                text="Projects"
+                link="/projects"
+                setMobileMenuOpen={setMobileMenuOpen}
+              />
+              <MobileNavButton
+                text="Experience"
+                link="/experience"
+                setMobileMenuOpen={setMobileMenuOpen}
+              />
+              <MobileNavButton
+                text="Academics"
+                link="/academics"
+                setMobileMenuOpen={setMobileMenuOpen}
+              />
+              <button
+                className="text-black font-bold text-lg block"
+                onClick={toggleModal}
+              >
+                Contact Me
+              </button>
+            </div>
+          </div>
+        )}
+
+        {/* Contact Modal */}
         <button
-          className="text-black font-bold text-lg ml-4"
+          className="hidden md:flex text-black font-bold text-lg ml-4"
           onClick={toggleModal}
         >
           Contact Me
