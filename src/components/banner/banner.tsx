@@ -57,6 +57,7 @@ const Banner = () => {
               <input
                 type="text"
                 id="name"
+                name="from_name"
                 className="w-full p-2 border border-gray-300 rounded"
                 required
               />
@@ -68,6 +69,7 @@ const Banner = () => {
               <input
                 type="email"
                 id="email"
+                name="from_email"
                 className="w-full p-2 border border-gray-300 rounded"
                 required
               />
@@ -81,6 +83,7 @@ const Banner = () => {
               </label>
               <textarea
                 id="message"
+                name="message"
                 rows={4}
                 className="w-full p-2 border border-gray-300 rounded"
                 required
