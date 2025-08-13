@@ -5,10 +5,12 @@ import ExperiencePage from "./routes/experiencePage";
 import AcademicsPage from "./routes/academicsPage";
 import Banner from "./components/banner/banner";
 import Footer from "./components/footer";
+import ScrollToTop from "./components/scrollToTop";
 
 function Root() {
   return (
-    <div className="h-full w-full">
+    <div className="h-full w-full bg-lightGray">
+      <ScrollToTop />
       <Banner />
       <div className="pt-20">
         <Outlet />

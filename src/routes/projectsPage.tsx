@@ -20,9 +20,9 @@ const ProjectsPage = () => {
     {
       title: "Event Management System",
       description:
-        "React web app for creating and managing events with private guest lists. Uses firebase for authentication and database management, as well as for deployment.",
+        "React web app for creating and managing events with private guest lists. Uses firebase for authentication and database management, as well as for deployment. Click here to test using the email test@gmail.com and password test123",
       imageUrl: "/eventManagementSystem.png",
-      link: "https://github.com/jjmurphy1114/Event-Management-System",
+      link: "https://event-management-system-f7160.web.app",
     },
     {
       title: "Movie Production Data Analysis",
@@ -42,7 +42,13 @@ const ProjectsPage = () => {
 
   return (
     <div className="flex w-full h-full min-h-screen flex-col items-center bg-lightGray px-4">
-      <h1 className="text-6xl font-bold m-4 mt-12">Projects</h1>
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+      >
+        <h1 className="text-6xl font-bold m-4 mt-12">Projects</h1>
+      </motion.div>
       <div className="flex flex-col gap-8 w-full max-w-6xl">
         {projects.map((project, i) => (
           <motion.div

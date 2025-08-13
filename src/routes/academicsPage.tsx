@@ -58,9 +58,7 @@ const AcademicsPage = () => {
 
   return (
     <div className="flex w-full h-full min-h-screen flex-col items-center bg-lightGray">
-      <h1 className="text-6xl font-bold m-4 mt-12">Academics</h1>
       <motion.div
-        className="flex items-center w-full"
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{
@@ -68,7 +66,9 @@ const AcademicsPage = () => {
           duration: 0.6,
           ease: "easeOut",
         }}
+        className="flex flex-col w-full items-center justify-center"
       >
+        <h1 className="text-6xl font-bold m-4 mt-12">Academics</h1>
         <ExperienceCard
           role="BS in Computer Science and Data Science"
           company="WPI"
@@ -78,8 +78,8 @@ const AcademicsPage = () => {
           imageUrl="/wpiLogo2.png"
           link="https://www.wpi.edu/"
         />
+        <h1 className="text-4xl font-bold m-4 mt-12">Relevant Courses</h1>
       </motion.div>
-      <h1 className="text-4xl font-bold m-4 mt-12">Relevant Courses</h1>
       {courses.map((course, i) => (
         <motion.div
           className="flex items-center w-full"
